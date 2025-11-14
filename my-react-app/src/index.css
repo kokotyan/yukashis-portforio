@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* カスタム背景・フォント・スクロール */
+body {
+  margin: 0;
+  font-family: 'Noto Serif JP', serif;
+  background-color: #1e1b16;
+  background-size: cover;
+  background-position: top right;
+  background-attachment: fixed;
+  color: #d7c5a5;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-padding-top: 4rem;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* 星のアニメーションレイヤー */
+.starry-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-size: contain;
+  opacity: 0.2;
+  z-index: 0;
+  animation: starsMove 120s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes starsMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
